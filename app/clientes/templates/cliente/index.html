@@ -18,7 +18,7 @@
             <td style="padding: 10px; display: flex; gap: 10px;">
                 <a href="{{ url_for('bp_clientes.view', id=c.id) }}" style="color: #2563eb; text-decoration: none; font-weight: bold;">Ver</a>
                 <a href="{{ url_for('bp_clientes.edit', id=c.id) }}" style="color: #d97706; text-decoration: none; font-weight: bold;">Editar</a>
-                <a href="{{ url_for('bp_clientes.delete', id=c.id) }}" style="color: #dc2626; text-decoration: none; font-weight: bold;">Eliminar</a>
+                <a href="{{ url_for('bp_clientes.delete', id=c.id) }}" style="color: #dc2626; text-decoration: none; font-weight: bold;" onclick="return confirm('¿Estás seguro de eliminar este cliente?');">Eliminar</a>
             </td>
         </tr>
         {% endfor %}
