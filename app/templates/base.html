@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>TechBol - Sistema de Inventario y Ventas</title>
+</head>
+<body style="margin: 0; font-family: Arial, sans-serif; background-color: #f4f6f9;">
+    
+    <header style="background-color: #1e293b; color: white; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center;">
+        <h2 style="margin: 0;">TechBol S.A.</h2>
+        <nav style="display: flex; gap: 20px;">
+            <a href="{{ url_for('bp_clientes.index') }}" style="color: white; text-decoration: none;">Clientes</a>
+            <a href="{{ url_for('bp_productos.index') }}" style="color: white; text-decoration: none;">Productos</a>
+            <a href="{{ url_for('bp_pedidos.index') }}" style="color: white; text-decoration: none;">Pedidos</a>
+        </nav>
+    </header>
+
+    <main style="padding: 30px; max-width: 900px; margin: 0 auto;">
+        {% block content %}{% endblock %}
+    </main>
+
+</body>
+</html>

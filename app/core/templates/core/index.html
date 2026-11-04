@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="background: white; padding: 40px; border-radius: 8px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 20px;">
+    <h1 style="color: #1e293b; font-size: 2.5rem; margin-bottom: 10px;">TechBol S.A.</h1>
+    <p style="color: #64748b; font-size: 1.1rem; margin-bottom: 30px;">Sistema Monolítico Modular de Gestión de Inventario y Ventas</p>
+    
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
+        <a href="{{ url_for('bp_clientes.index') }}" style="background: #2563eb; color: white; padding: 15px 25px; text-decoration: none; border-radius: 6px; font-weight: bold; width: 150px; display: inline-block;">
+            👥 Clientes
+        </a>
+        <a href="{{ url_for('bp_productos.index') }}" style="background: #16a34a; color: white; padding: 15px 25px; text-decoration: none; border-radius: 6px; font-weight: bold; width: 150px; display: inline-block;">
+            📦 Productos
+        </a>
+        <a href="{{ url_for('bp_pedidos.index') }}" style="background: #d97706; color: white; padding: 15px 25px; text-decoration: none; border-radius: 6px; font-weight: bold; width: 150px; display: inline-block;">
+            🛒 Pedidos
+        </a>
+    </div>
+</div>
+{% endblock %}

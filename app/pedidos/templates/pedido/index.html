@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div style="background: white; padding: 20px; border-radius: 8px;">
+    <h2>Listado de Pedidos</h2>
+    <a href="{{ url_for('bp_pedidos.create') }}" style="background: #2563eb; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; margin-bottom: 15px;">+ Nuevo Pedido</a>
+    <table style="width: 100%; border-collapse: collapse;">
+        <tr style="background: #e2e8f0; text-align: left;">
+            <th style="padding: 10px;">ID</th>
+            <th style="padding: 10px;">Fecha</th>
+            <th style="padding: 10px;">Monto</th>
+            <th style="padding: 10px;">Cliente</th>
+            <th style="padding: 10px;">Producto</th>
+            <th style="padding: 10px;">Acciones</th>
+        </tr>
+        {% for ped in pedidos %}
+        <tr style="border-bottom: 1px solid #cbd5e1;">
+            <td style="padding: 10px;">{{ ped.id }}</td>
+            <td style="padding: 10px;">{{ ped.fecha }}</td>
+            <td style="padding: 10px;">${{ ped.monto }}</td>
+            <td style="padding: 10px;">{{ ped.cliente.nombre if ped.cliente else 'N/A' }}</td>
+            <td style="padding: 10px;">{{ ped.producto.nombre if ped.producto else 'N/A' }}</td>
+            <td style="padding: 10px; display: flex; gap: 10px;">
+                <a href="{{ url_for('bp_pedidos.view', id=ped.id) }}" style="color: #2563eb; text-decoration: none; font-weight: bold;">Ver</a>
+                <a href="{{ url_for('bp_pedidos.edit', id=ped.id) }}" style="color: #d97706; text-decoration: none; font-weight: bold;">Editar</a>
+                <a href="{{ url_for('bp_pedidos.delete', id=ped.id) }}" style="color: #dc2626; text-decoration: none; font-weight: bold;">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

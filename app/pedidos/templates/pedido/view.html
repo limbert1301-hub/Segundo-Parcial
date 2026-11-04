@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div style="background: white; padding: 20px; border-radius: 8px; max-width: 400px; margin: auto;">
+    <h2>Detalle del Pedido</h2>
+    <p><strong>ID:</strong> {{ pedido.id }}</p>
+    <p><strong>Fecha:</strong> {{ pedido.fecha }}</p>
+    <p><strong>Monto:</strong> ${{ pedido.monto }}</p>
+    <p><strong>Cliente:</strong> {{ pedido.cliente.nombre if pedido.cliente else 'N/A' }}</p>
+    <p><strong>Producto:</strong> {{ pedido.producto.nombre if pedido.producto else 'N/A' }}</p>
+    <a href="{{ url_for('bp_pedidos.index') }}" style="background: #64748b; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; margin-top: 10px;">Volver</a>
+</div>
+{% endblock %}

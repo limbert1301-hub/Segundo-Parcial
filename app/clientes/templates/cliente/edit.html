@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div style="background: white; padding: 20px; border-radius: 8px; max-width: 400px; margin: auto;">
+    <h2>Editar Cliente</h2>
+    <form method="POST" style="display: flex; flex-direction: column; gap: 12px;">
+        <label>Nombre:</label>
+        <input type="text" name="nombre" value="{{ cliente.nombre }}" required style="padding: 8px;">
+        <label>Teléfono:</label>
+        <input type="text" name="telefono" value="{{ cliente.telefono }}" required style="padding: 8px;">
+        <button type="submit" style="background: #2563eb; color: white; padding: 10px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Actualizar</button>
+    </form>
+    <br>
+    <a href="{{ url_for('bp_clientes.index') }}" style="color: #64748b; text-decoration: none;">Cancelar</a>
+</div>
+{% endblock %}
