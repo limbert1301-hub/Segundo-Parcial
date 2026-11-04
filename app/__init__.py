@@ -27,4 +27,9 @@ def create_app():
     app.register_blueprint(bp_productos, url_prefix='/productos')
     app.register_blueprint(bp_pedidos, url_prefix='/pedidos')
 
+    # Importar modelos para que las migraciones los detecten
+    from app.clientes.models import Cliente
+    from app.productos.models import Producto
+    from app.pedidos.models import Pedido
+
     return app
